@@ -1,4 +1,6 @@
+import sys
 cache = dict()
+
 def fib(n):
     if n in cache:
         return cache[n]
@@ -8,4 +10,6 @@ def fib(n):
     cache[n] = fib_n
     return fib_n
 
-print(fib(30))
+if len(sys.argv) > 1:
+   n = int(sys.argv[1])
+   print(fib(n))
